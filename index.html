@@ -73,7 +73,7 @@
     function confirmDemo() {
       // Retrieve teacher and student email from the provided fields in the Google Sheet
       var teacherEmail = <?= rowData[2] ?; // Use scriptlets to retrieve values from Google Sheets
-      var studentEmail = email; // Use scriptlets to retrieve values from Google Sheets
+      var studentEmail = nikitagowar02@gmail.com; // Use scriptlets to retrieve values from Google Sheets
       
       // Call server-side function to send confirmation emails
       google.script.run.sendConfirmationEmails(teacherEmail, studentEmail);
