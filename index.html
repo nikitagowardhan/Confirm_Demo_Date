@@ -66,21 +66,25 @@
         </div>
         <div class="content">
             <p>Please select a date for the demo:</p>
-            <!-- You can include your date selection mechanism here -->
-            <input type="date" id="demoDate" name="demoDate">
-            <div class="button-container">
-                <button class="confirm-button" onclick="confirmDemo()">Confirm Demo Date</button>
-            </div>
-        </div>
-    </div>
-    <script>
-        function confirmDemo() {
-            // You can add your confirmation logic here
-            // Once confirmed, you can redirect the user back to the main page or perform any other action
-            alert("Demo date confirmed!"); // Example alert
-            // Redirect example:
-            // window.location.href = "https://your-main-page-url.com";
-        }
-    </script>
+            <button id="confirmButton">Confirm Demo Date</button>
+
+  <script>
+    // Function to trigger when confirm button is clicked
+    function confirmDemo() {
+      // Retrieve teacher and student email from the provided fields in the Google Sheet
+      var teacherEmail = <?= rowData[2] ?; // Use scriptlets to retrieve values from Google Sheets
+      var studentEmail = email; // Use scriptlets to retrieve values from Google Sheets
+      
+      // Call server-side function to send confirmation emails
+      google.script.run.sendConfirmationEmails(teacherEmail, studentEmail);
+
+      // Inform the user that demo date is confirmed
+      alert("Demo date confirmed!");
+    }
+
+    // Attach event listener to the confirm button
+    document.getElementById("confirmButton").addEventListener("click", confirmDemo);
+  </script>
+
 </body>
 </html>
