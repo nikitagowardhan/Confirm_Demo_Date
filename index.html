@@ -68,23 +68,6 @@
             <p>Please select a date for the demo:</p>
             <button id="confirmButton">Confirm Demo Date</button>
 
-  <script>
-    // Function to trigger when confirm button is clicked
-    function confirmDemo() {
-      // Retrieve teacher and student email from the provided fields in the Google Sheet
-      var teacherEmail = <?= rowData[2] ?; // Use scriptlets to retrieve values from Google Sheets
-      var studentEmail = nikitagowar02@gmail.com; // Use scriptlets to retrieve values from Google Sheets
-      
-      // Call server-side function to send confirmation emails
-      google.script.run.sendConfirmationEmails(teacherEmail, studentEmail);
-
-      // Inform the user that demo date is confirmed
-      alert("Demo date confirmed!");
-    }
-
-    // Attach event listener to the confirm button
-    document.getElementById("confirmButton").addEventListener("click", confirmDemo);
-  </script>
-
+  
 </body>
 </html>
