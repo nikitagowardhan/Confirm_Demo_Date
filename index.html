@@ -66,8 +66,32 @@
         </div>
         <div class="content">
             <p>Please select a date for the demo:</p>
-            <button id="confirmButton">Confirm Demo Date</button>
+            <input type="date" id="demoDate">
+            <div class="button-container">
+                <button class="confirm-button" id="confirmButton">Confirm Demo Date</button>
+            </div>
+        </div>
+    </div>
 
-  
+    <script>
+        // Function to trigger when confirm button is clicked
+        function confirmDemo() {
+            // Retrieve selected date
+            var selectedDate = document.getElementById("demoDate").value;
+            
+            // Check if a date is selected
+            if(selectedDate !== "") {
+                // Inform the user that demo date is confirmed
+                alert("Demo date confirmed for " + selectedDate);
+            } else {
+                // Inform the user to select a date
+                alert("Please select a date for the demo.");
+            }
+        }
+
+        // Attach event listener to the confirm button
+        document.getElementById("confirmButton").addEventListener("click", confirmDemo);
+    </script>
+
 </body>
 </html>
